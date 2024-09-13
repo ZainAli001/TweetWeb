@@ -1,0 +1,28 @@
+body{
+    background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+font-family: cursive;
+}
+
+.logo{
+    font-family: cursive;
+    font-size: x-large;
+    letter-spacing: 1px;
+}
+.first-char{
+    color: red;
+    font-weight: bolder;
+    font-size: 28px;
+}
+.second-char{
+    color: rgb(255 196 65);
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+.myform{
+    width: 600px;
+    margin: auto;
+}

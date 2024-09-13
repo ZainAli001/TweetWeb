@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+<h1>Search Results</h1>
+
+{% if query %}
+    <p>Results for "{{ query }}":</p>
+
+    {% if results %}
+    <div class="box d-flex ">
+        {% for result in results %}
+        <div class="card my-4 mx-2" style="width: 18rem;">
+            <img src="{{result.image.url}}" class="card-img-top" alt="...">
+            <div class="card-content">
+              <h5 class="card-title">{{result.title}}</h5>
+              <p class="card-text">{{result.desc}}</p>
+            {% if result.user == user %}
+            
+            <a href="{% url 'tweet_edit' result.id %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'tweet_delete' result.id %}" class="btn btn-danger">Delete</a>
+            {% endif %}
+            </div>
+          </div>
+    
+          {% endfor %}
+        
+      </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% else %}
+    <p>Please enter a search query.</p>
+{% endif %}
+
+{% endblock content %}

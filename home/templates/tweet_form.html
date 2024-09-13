@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}   {% if form.instance.pk %} 
+Edit Tweet  
+{% else%}
+Create Tweet 
+{% endif %}
+{% endblock title %}
+
+
+{% block content %}
+<div class="container ">
+<h1 class="text-center text-white my-4">Tweet Wolrd</h1>
+<h2>
+    {% if form.instance.pk %} 
+    Edit Tweet  
+    {% else%}
+    Create Tweet 
+    {% endif %}
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+{{form.as_p}}
+<button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <a class="btn btn-info" href="{% url 'user_home' %}">Back To Tweet List</a>
+</h2>
+</div>
+{% endblock content %}
